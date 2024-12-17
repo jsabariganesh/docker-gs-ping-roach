@@ -2,7 +2,7 @@
 ## Build
 ##
 
-FROM golang:1.16-buster AS build
+FROM quay.io/tpapps/golang:1.23
 
 WORKDIR /app
 
@@ -24,8 +24,9 @@ WORKDIR /
 
 COPY --from=build /docker-gs-ping-roach /docker-gs-ping-roach
 
-EXPOSE 8080
+EXPOSE 80
+EXPOSE 443
 
-USER nonroot:nonroot
+USER 9000:9000
 
 ENTRYPOINT ["/docker-gs-ping-roach"]
