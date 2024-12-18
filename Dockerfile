@@ -2,7 +2,8 @@
 ## Build
 ##
 
-FROM quay.io/tpapps/golang:1.23
+FROM quay.io/tpapps/golang:1.23 AS build
+## FROM golang:1.16-buster
 
 WORKDIR /app
 
